@@ -1,5 +1,6 @@
 package com.github.zavier
 
+import com.github.zavier.dao.DatabaseSingleton
 import com.github.zavier.plugins.configureRouting
 import com.github.zavier.plugins.configureSecurity
 import com.github.zavier.plugins.configureSerialization
@@ -13,6 +14,9 @@ fun main() {
 }
 
 fun Application.module() {
+    // 初始化数据库连接等
+    DatabaseSingleton.init()
+
     configureSecurity()
     configureRouting()
     configureSerialization()
