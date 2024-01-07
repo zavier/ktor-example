@@ -4,7 +4,7 @@ import kotlinx.serialization.Serializable
 import org.jetbrains.exposed.sql.Table
 
 @Serializable
-data class Customer(val id: Int, val firstName: String, val lastName: String, val email: String)
+data class Customer(val id: Int, val firstName: String, val lastName: String, val email: String): java.io.Serializable
 
 object Customers : Table() {
     val id = integer("id").autoIncrement()

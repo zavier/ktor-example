@@ -1,7 +1,7 @@
 package com.github.zavier.routers
 
-import com.github.zavier.dao.customerDao
 import com.github.zavier.models.Customer
+import com.github.zavier.plugins.customerDao
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.request.*

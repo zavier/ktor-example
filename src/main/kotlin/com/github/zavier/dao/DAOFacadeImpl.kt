@@ -3,7 +3,6 @@ package com.github.zavier.dao
 import com.github.zavier.dao.DatabaseSingleton.dbQuery
 import com.github.zavier.models.Customer
 import com.github.zavier.models.Customers
-import kotlinx.coroutines.runBlocking
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 
@@ -44,14 +43,5 @@ class DAOFacadeImpl : DAOFacade {
 
     override suspend fun deleteCustomer(id: Int): Boolean = dbQuery {
         Customers.deleteWhere { Customers.id eq id } > 0
-    }
-}
-
-
-val customerDao: DAOFacade = DAOFacadeImpl().apply {
-    runBlocking {
-        if (allCustomers().isEmpty()) {
-            addNewCustomer("fir", "last", "t@e.com")
-        }
     }
 }
