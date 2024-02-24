@@ -1,1 +1,1 @@
-rootProject.name = "com.github.zavier.url-shortener"
+rootProject.name = "com.github.zavier.ktor-example"
